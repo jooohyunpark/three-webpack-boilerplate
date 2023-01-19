@@ -31,7 +31,10 @@ function init() {
   scene.background = new THREE.Color(0xffffff)
 
   // light
-  scene.add(new THREE.AmbientLight(0xffffff, 0.5))
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+  directionalLight.position.set(1, 1, 1)
+  scene.add(ambientLight, directionalLight)
 
   // resize
   window.addEventListener('resize', onWindowResize)
