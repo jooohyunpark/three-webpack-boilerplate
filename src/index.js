@@ -30,6 +30,9 @@ function init() {
   scene = new THREE.Scene()
   scene.background = new THREE.Color(0xffffff)
 
+  // light
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5))
+
   // resize
   window.addEventListener('resize', onWindowResize)
 
@@ -46,9 +49,9 @@ function init() {
   controls.target = new THREE.Vector3(0, 0, 0)
 
   // screen
-  const geometry = new THREE.SphereGeometry(1, 16, 16)
+  const geometry = new THREE.BoxGeometry(1, 3, 2)
   const material = new THREE.MeshStandardMaterial({
-    color: 0x000000,
+    color: 0xcccccc,
     roughness: 0.8,
     metalness: 0.2
   })
