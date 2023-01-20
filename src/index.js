@@ -60,6 +60,8 @@ function init() {
   })
   const mesh = new THREE.Mesh(geometry, material)
   scene.add(mesh)
+
+  onWindowResize()
 }
 
 function animate() {
